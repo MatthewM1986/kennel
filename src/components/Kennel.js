@@ -4,10 +4,11 @@ import "./animal/Animal.css"
 import "./customer/Customer.css"
 import "./employee/Employee.css"
 import "./location/Location.css"
+import { LocationList } from "./location/LocationList"
+import { LocationProvider } from "./location/LocationProvider"
 import { Animal } from "./animal/Animal"
 import { Customer } from "./customer/Customer"
 import { Employee } from "./employee/Employee"
-import { Location } from "./location/Location"
 
 export const Kennel = () => (
     <>
@@ -39,11 +40,9 @@ export const Kennel = () => (
             <Employee />
         </article>
 
-        <h2>Loccations</h2>
-        <article className="locations">
-            <Location />
-            <Location />
-            <Location />
-        </article>
+        <h2>Locations</h2>
+        <LocationProvider>
+            <LocationList />
+        </LocationProvider>
     </>
 )
