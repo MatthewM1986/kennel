@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from "react"
-import { LocationContext } from "./LocationProvider"
-import { Location } from "./Location"
-import "./Location.css"
+import { AnimalContext } from "./AnimalProvider"
+import { Animal } from "./Animal"
+import "./Animal.css"
 
-export const LocationList = () => {
+export const AnimalList = () => {
     // This state changes when `getLocations()` is invoked below
-    const { locations, getLocations } = useContext(LocationContext)
+    const { animals, getAnimals } = useContext(AnimalContext)
 
     /*
         What's the effect this is reponding to? Component was
@@ -14,7 +14,7 @@ export const LocationList = () => {
     */
     useEffect(() => {
         //console.log("LocationList: Initial render before data")
-        getLocations()
+        getAnimals()
     }, [])
 
     /*
@@ -24,12 +24,12 @@ export const LocationList = () => {
     useEffect(() => {
         // console.log("LocationList: Location state changed")
         // console.log(locations)
-    }, [locations])
+    }, [animals])
 
     return (
-        <div className="locations">
+        <div className="animals">
         {
-            locations.map(locationTaco => <Location key={locationTaco.id} location={locationTaco} />)
+            animals.map(animalTaco => <Animal key={animalTaco.id} animal={animalTaco} />)
         }
         </div>
     )

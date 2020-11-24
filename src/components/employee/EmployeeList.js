@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from "react"
-import { LocationContext } from "./LocationProvider"
-import { Location } from "./Location"
-import "./Location.css"
+import { EmployeeContext } from "./EmployeeProvider"
+import { Employee } from "./Employee"
+import "./Employee.css"
 
-export const LocationList = () => {
+export const EmployeeList = () => {
     // This state changes when `getLocations()` is invoked below
-    const { locations, getLocations } = useContext(LocationContext)
+    const { employees, getEmployees } = useContext(EmployeeContext)
 
     /*
         What's the effect this is reponding to? Component was
@@ -14,7 +14,7 @@ export const LocationList = () => {
     */
     useEffect(() => {
         //console.log("LocationList: Initial render before data")
-        getLocations()
+        getEmployees()
     }, [])
 
     /*
@@ -24,12 +24,12 @@ export const LocationList = () => {
     useEffect(() => {
         // console.log("LocationList: Location state changed")
         // console.log(locations)
-    }, [locations])
+    }, [employees])
 
     return (
-        <div className="locations">
+        <div className="employees">
         {
-            locations.map(locationTaco => <Location key={locationTaco.id} location={locationTaco} />)
+            employees.map(employeeTaco => <Employee key={employeeTaco.id} employee={employeeTaco} />)
         }
         </div>
     )
