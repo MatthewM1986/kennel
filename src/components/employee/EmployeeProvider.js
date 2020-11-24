@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 
 /*
     The context is imported and used by individual components
@@ -10,7 +10,7 @@ export const EmployeeContext = React.createContext()
  This component establishes what data can be used.
  */
 export const EmployeeProvider = (props) => {
-    const [employees, setEmployees] = useState([])
+    const [employeesArray, setEmployees] = useState([])
 
     const getEmployees = () => {
         return fetch("http://localhost:8088/employees")
@@ -37,7 +37,7 @@ export const EmployeeProvider = (props) => {
     */
     return (
         <EmployeeContext.Provider value={{
-            employees, addEmployee, getEmployees
+            employeesArray, addEmployee, getEmployees
         }}>
             {props.children}
         </EmployeeContext.Provider>

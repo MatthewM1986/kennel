@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 
 /*
     The context is imported and used by individual components
@@ -10,7 +10,7 @@ export const LocationContext = React.createContext()
  This component establishes what data can be used.
  */
 export const LocationProvider = (props) => {
-    const [locations, setLocations] = useState([])
+    const [locationsArray, setLocations] = useState([])
 
     const getLocations = () => {
         return fetch("http://localhost:8088/locations")
@@ -37,7 +37,7 @@ export const LocationProvider = (props) => {
     */
     return (
         <LocationContext.Provider value={{
-            locations, addLocation, getLocations
+            locationsArray, addLocation, getLocations
         }}>
             {props.children}
         </LocationContext.Provider>

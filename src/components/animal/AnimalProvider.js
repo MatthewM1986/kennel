@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 
 /*
     The context is imported and used by individual components
@@ -10,7 +10,7 @@ export const AnimalContext = React.createContext()
  This component establishes what data can be used.
  */
 export const AnimalProvider = (props) => {
-    const [animals, setAnimals] = useState([])
+    const [animalsArray, setAnimals] = useState([])
 
     const getAnimals = () => {
         return fetch("http://localhost:8088/animals")
@@ -37,7 +37,7 @@ export const AnimalProvider = (props) => {
     */
     return (
         <AnimalContext.Provider value={{
-            animals, addAnimal, getAnimals
+            animalsArray, addAnimal, getAnimals
         }}>
             {props.children}
         </AnimalContext.Provider>
