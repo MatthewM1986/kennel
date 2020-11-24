@@ -5,7 +5,7 @@ import "./Customer.css"
 
 export const CustomerList = () => {
     // This state changes when `getLocations()` is invoked below
-    const { customers, getCustomers } = useContext(CustomerContext)
+    const { customersArray, getCustomers } = useContext(CustomerContext)
 
     /*
         What's the effect this is reponding to? Component was
@@ -21,15 +21,15 @@ export const CustomerList = () => {
         This effect is solely for learning purposes. The effect
         it is responding to is that the location state changed.
     */
-    useEffect(() => {
+    //useEffect(() => {
         // console.log("LocationList: Location state changed")
         // console.log(locations)
-    }, [customers])
+    //}, [customersArray])
 
     return (
         <div className="customers">
         {
-            customers.map(customerTaco => <Customer key={customerTaco.id} customer={customerTaco} />)
+            customersArray.map(customerTaco => <Customer key={customerTaco.id} customerObj={customerTaco} />)
         }
         </div>
     )

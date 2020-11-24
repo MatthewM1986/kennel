@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 
 /*
     The context is imported and used by individual components
@@ -10,7 +10,7 @@ export const CustomerContext = React.createContext()
  This component establishes what data can be used.
  */
 export const CustomerProvider = (props) => {
-    const [customers, setCustomers] = useState([])
+    const [customersArray, setCustomers] = useState([])
 
     const getCustomers = () => {
         return fetch("http://localhost:8088/customers")
@@ -37,7 +37,7 @@ export const CustomerProvider = (props) => {
     */
     return (
         <CustomerContext.Provider value={{
-            customers, addCustomer, getCustomers
+            customersArray, addCustomer, getCustomers
         }}>
             {props.children}
         </CustomerContext.Provider>
