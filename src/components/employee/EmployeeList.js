@@ -29,7 +29,7 @@ export const EmployeeList = () => {
     return (
         <div className="employees">
         {
-            employees.map(employeeTaco => <Employee key={employeeTaco.id} employee={employeeTaco} />)
+            employees.map(employeeTaco => <Employee key={employeeTaco.id} employeeObj={employeeTaco} />)
         }
         </div>
     )
