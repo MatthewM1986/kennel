@@ -6,20 +6,6 @@
       "breed": "Poodle",
       "customerId": 1,
       "locationId": 2
-    },
-    {
-      "id": 2,
-      "name": "Lilly",
-      "breed": "Beagle",
-      "customerId": 2,
-      "locationId": 1
-    },
-    {
-      "id": 3,
-      "name": "Magnolia",
-      "breed": "Tabby",
-      "customerId": 3,
-      "locationId": 1
     }
   ],
   "customers": [
