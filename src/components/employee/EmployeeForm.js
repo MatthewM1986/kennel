@@ -3,8 +3,6 @@ import { EmployeeContext } from "./EmployeeProvider"
 import { LocationContext } from "../location/LocationProvider"
 import { AnimalContext } from "../animal/AnimalProvider"
 import "./Employee.css"
-import { LocationContext } from "../location/LocationProvider"
-import { AnimalContext } from "../customer/AnimalProvider"
 
 export const EmployeeForm = (props) => {
     const { addEmployee } = useContext(EmployeeContext)
@@ -40,8 +38,8 @@ export const EmployeeForm = (props) => {
             can't just ask for the `.value` property directly,
             but rather `.current.value` now in React.
         */
-        const locationId = parseInt(locationsArray.current.value)
-        const animalId = parseInt(animalsArray.current.value)
+        const locationId = parseInt(location.current.value)
+        const animalId = parseInt(animal.current.value)
         const employeeName = name.current.value
 
         if (locationId === 0 || animalId === 0 || employeeName ==="") {
@@ -70,7 +68,7 @@ export const EmployeeForm = (props) => {
                     <label htmlFor="location">Assign to location: </label>
                     <select defaultValue="" name="location" ref={location} id="employeeLocation" className="form-control" >
                         <option value="0">Select a location</option>
-                        {locations.map(e => (
+                        {locationsArray.map(e => (
                             <option key={e.id} value={e.id}>
                                 {e.name}
                             </option>
@@ -83,7 +81,7 @@ export const EmployeeForm = (props) => {
                     <label htmlFor="location">Caretaker for: </label>
                     <select defaultValue="" name="animal" ref={animal} id="employeeAnimal" className="form-control" >
                         <option value="0">Select an animal</option>
-                        {animals.map(e => (
+                        {animalsArray.map(e => (
                             <option key={e.id} value={e.id}>
                                 {e.name}
                             </option>
