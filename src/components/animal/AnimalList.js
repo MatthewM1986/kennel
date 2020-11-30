@@ -2,19 +2,24 @@ import React, { useContext, useEffect } from "react"
 import { AnimalContext } from "./AnimalProvider"
 import { Animal } from "./Animal"
 import "./Animal.css"
+import { LocationContext } from "../location/LocationProvider"
+import { CustomerContext } from "../customer/CustomerProvider"
 
 export const AnimalList = () => {
     // This state changes when `getLocations()` is invoked below
     const { animalsArray, getAnimals } = useContext(AnimalContext)
-
+    const { locationsArray, getLocations } = useContext(LocationContext)
+    const { customersArray, getCustomers } = useContext(CustomerContext)
     /*
         What's the effect this is reponding to? Component was
         "mounted" to the DOM. React renders blank HTML first,
         then gets the data, then re-renders.
     */
     useEffect(() => {
-        //console.log("LocationList: Initial render before data")
-        getAnimals()
+        //console.log("AnimalList: Initial render before data")
+        getLocations()
+        .then(getCustomers)
+        .then(getAnimals)
     }, [])
 
     /*
@@ -22,15 +27,20 @@ export const AnimalList = () => {
         it is responding to is that the location state changed.
     */
     //useEffect(() => {
-        // console.log("LocationList: Location state changed")
-        // console.log(locations)
+        // console.log("AnimalList: Location state changed")
+        // console.log(animals)
     //}, [animalsArray])
 
     return (
         <div className="animals">
         {
-            animalsArray.map(animalTaco => <Animal key={animalTaco.id} animalObj={animalTaco} />)
-        }
+            animalsArray.map(animalTaco => {
+                const clinic = locationsArray.find(l => l.id === animalTaco.locationId)
+                const owner = customersArray.find(c => c.id === animalTaco.customerId)
+            
+            return <Animal key={animalTaco.id} animalObj={animalTaco} customerObj={owner} locationObj={clinic} />
+        })
+    }
         </div>
     )
 }
