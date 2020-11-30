@@ -3,7 +3,7 @@ import { EmployeeContext } from "./EmployeeProvider"
 import { Employee } from "./Employee"
 import "./Employee.css"
 
-export const EmployeeList = () => {
+export const EmployeeList = (props) => {
     // This state changes when `getLocations()` is invoked below
     const { employeesArray, getEmployees } = useContext(EmployeeContext)
 
