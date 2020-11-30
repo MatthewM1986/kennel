@@ -6,60 +6,17 @@
       "breed": "Poodle",
       "customerId": 1,
       "locationId": 2
-    },
-    {
-      "id": 2,
-      "name": "Lilly",
-      "breed": "Beagle",
-      "customerId": 2,
-      "locationId": 1
-    },
-    {
-      "id": 3,
-      "name": "Magnolia",
-      "breed": "Tabby",
-      "customerId": 3,
-      "locationId": 1
     }
   ],
   "customers": [
     {
-      "id": 1,
-      "name": "Hannah Hall",
-      "address": "7002 Chestnut Ct"
-    },
-    {
-      "id": 2,
-      "name": "Matthew Machurek",
-      "address": "119 Heathcote Ct"
-    },
-    {
-      "id": 3,
-      "name": "Dylana Miller",
-      "address": "119 Main St"
+      "email": "mrjm2005@yahoo.com",
+      "password": "Santee1986",
+      "name": "Matthew  Machurek",
+      "id": 1
     }
   ],
   "employees": [
-    {
-      "id": 1,
-      "name": "Jeremy Bakker",
-      "locationId": 2
-    },
-    {
-      "id": 2,
-      "name": "Shawn Goldsmith",
-      "locationId": 2
-    },
-    {
-      "id": 3,
-      "name": "Melissa Pinhal",
-      "locationId": 1
-    },
-    {
-      "id": 4,
-      "name": "Sheena Ebinger",
-      "locationId": 1
-    },
     {
       "name": "Brett",
       "locationId": 2,
