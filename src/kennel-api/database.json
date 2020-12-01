@@ -27,26 +27,6 @@
   ],
   "employees": [
     {
-      "id": 1,
-      "name": "Jeremy Bakker",
-      "locationId": 2
-    },
-    {
-      "id": 2,
-      "name": "Shawn Goldsmith",
-      "locationId": 2
-    },
-    {
-      "id": 3,
-      "name": "Melissa Pinhal",
-      "locationId": 1
-    },
-    {
-      "id": 4,
-      "name": "Sheena Ebinger",
-      "locationId": 1
-    },
-    {
       "name": "Brett",
       "locationId": 2,
       "animalId": 1,
