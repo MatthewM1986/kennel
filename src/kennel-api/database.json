@@ -10,19 +10,10 @@
   ],
   "customers": [
     {
-      "id": 1,
-      "name": "Hannah Hall",
-      "address": "7002 Chestnut Ct"
-    },
-    {
-      "id": 2,
-      "name": "Matthew Machurek",
-      "address": "119 Heathcote Ct"
-    },
-    {
-      "id": 3,
-      "name": "Dylana Miller",
-      "address": "119 Main St"
+      "email": "mrjm2005@yahoo.com",
+      "password": "Santee1986",
+      "name": "Matthew  Machurek",
+      "id": 1
     }
   ],
   "employees": [
