@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react"
 import { EmployeeContext } from "./EmployeeProvider"
-import { Employee } from "./Employee"
+import { Link } from "react-router-dom"
 import "./Employee.css"
 
 export const EmployeeList = (props) => {
@@ -22,21 +22,25 @@ export const EmployeeList = (props) => {
         it is responding to is that the location state changed.
     */
     //useEffect(() => {
-        // console.log("LocationList: Location state changed")
-        // console.log(locations)
+    // console.log("LocationList: Location state changed")
+    // console.log(locations)
     //}, [employeesArray])
 
     return (
         <div className="employees">
             <h1>Employees</h1>
-        <button onClick={() => props.history.push("/employees/create")}>
-            Add Employee
+            <button onClick={() => props.history.push("/employees/create")}>
+                Add Employee
         </button>
-        <article className="employeeList">
-        {
-            employeesArray.map(employeeTaco => <Employee key={employeeTaco.id} employeeObj={employeeTaco} />)
+            <article className="employeeList">
+                {
+                    employeesArray.map(employeeTaco => {
+                        return <Link key={employeeTaco.id} to={ `/employees/${employeeTaco.id}`} >
+            <h3>{employeeTaco.name}</h3>
+                        </Link>
+                    })
         }
         </article>
-        </div>
+        </div >
     )
 }
