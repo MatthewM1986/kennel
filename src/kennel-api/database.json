@@ -2,6 +2,7 @@
   "animals": [
     {
       "name": "Doodles",
+      "breed": "Poodle",
       "locationId": 2,
       "customerId": 1,
       "id": 1

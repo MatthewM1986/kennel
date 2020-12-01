@@ -42,12 +42,14 @@ export const AnimalForm = (props) => {
         const locationId = parseInt(location.current.value)
         const customerId = parseInt(customer.current.value)
         const animalName = name.current.value
+        const animalBreed = breed.current.value
 
-        if (locationId === 0 || customerId === 0 || animalName ==="") {
-            window.alert("Please select all options and provide a name")
+        if (locationId === 0 || customerId === 0 || animalName ==="" || animalBreed === "") {
+            window.alert("Please select all options and provide a name and breed")
         } else {
             addAnimal({
                 name: name.current.value,
+                breed: breed.current.value,
                 locationId,
                 customerId
             })
