@@ -1,11 +1,11 @@
 {
   "animals": [
     {
-      "id": 1,
       "name": "Doodles",
       "breed": "Poodle",
+      "locationId": 2,
       "customerId": 1,
-      "locationId": 2
+      "id": 1
     }
   ],
   "customers": [
