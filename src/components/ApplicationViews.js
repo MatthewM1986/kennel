@@ -8,6 +8,7 @@ import { LocationList } from "./location/LocationList"
 import { LocationDetail } from "./location/LocationDetail"
 import { AnimalList } from "./animal/AnimalList"
 import { AnimalForm } from "./animal/AnimalForm"
+import { AnimalDetails } from "./animal/AnimalDetail"
 import { CustomerList } from "./customer/CustomerList"
 import { EmployeeList } from "./employee/EmployeeList"
 import { EmployeeForm } from "./employee/EmployeeForm"
@@ -24,7 +25,7 @@ export const ApplicationViews = (props) => {
                             <LocationList />
                         </Route>
 
-                        <Route path="/locations/:locationId(\d+)" render={ (props) => <LocationDetail {...props} />
+                        <Route path="/locations/:locationId(\d+)" render={(props) => <LocationDetail {...props} />
                         } />
                     </AnimalProvider>
                 </EmployeeProvider>
@@ -42,6 +43,10 @@ export const ApplicationViews = (props) => {
 
                         <Route exact path="/animals/create" render={
                             props => <AnimalForm {...props} />
+                        } />
+
+                        <Route path="/animals/:animalId(\d+)" render={
+                            props => <AnimalDetails {...props} />
                         } />
                     </CustomerProvider>
                 </LocationProvider>
