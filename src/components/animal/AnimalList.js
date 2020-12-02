@@ -4,12 +4,35 @@ import { Animal } from "./Animal"
 import "./Animal.css"
 
 export const AnimalList = ({ history }) => {
-    const { getAnimals, animalsArray } = useContext(AnimalContext)
+    const { getAnimals, animalsArray, searchTerms } = useContext(AnimalContext)
+
+    /*
+       Since you don't need to ALWAYS going to be displaying all animals
+    */
+    const [filteredAnimals, setFiltered] = useState([])
 
     // Initialization effect hook -> Go get animal data
     useEffect(() => {
         getAnimals()
     }, [])
+
+
+    /*
+            This effect hook function will run when the following two state changes happen:
+                1. The animal state changes. First when it is created, then once you get the animals from the API
+                2. When the search terms change, which happens when the user types something in the AnimalSearch component
+        */
+    useEffect(() => {
+        if (searchTerms !== "") {
+            // If the search field is not blank, display matching animals
+            const subset = animalsArray.filter(animal => animal.name.toLowerCase().includes(searchTerms))
+            setFiltered(subset)
+        } else {
+            // If the search field is blank, display all animals
+            setFiltered(animalsArray)
+        }
+    }, [searchTerms, animalsArray])
+
 
     return (
         <>
@@ -20,7 +43,7 @@ export const AnimalList = ({ history }) => {
             </button>
             <div className="animals">
                 {
-                    animalsArray.map(animal => {
+                    filteredAnimals.map(animal => {
                         return <Animal key={animal.id} animalObj={animal} />
                     })
                 }
