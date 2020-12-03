@@ -1,13 +1,6 @@
 {
   "animals": [
     {
-      "name": "Doodles",
-      "breed": "Poodle",
-      "locationId": 2,
-      "customerId": 1,
-      "id": 1
-    },
-    {
       "name": "Lilly",
       "breed": "Beagle",
       "locationId": 1,
@@ -30,14 +23,7 @@
       "id": 1
     }
   ],
-  "employees": [
-    {
-      "name": "Brett",
-      "locationId": 2,
-      "animalId": 1,
-      "id": 5
-    }
-  ],
+  "employees": [],
   "locations": [
     {
       "id": 1,
